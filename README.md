@@ -171,28 +171,45 @@ nlp-classification-dashboard/
 
 ### Prerequisites
 - Python 3.10+ (Python 3.11 recommended)
-- Node.js 18+ and npm
+- Node.js 18+ and npm (optional for React frontend)
 
-### 1. Train the ML Model (Phase 1)
+### ⚡ Option A: Interactive All-in-One App (`app.py`)
+Run the unified Streamlit web application with real-time Sentiment Analysis, Spam Detection, Batch Inference, and Interactive Metrics:
 ```bash
-# Automatically downloads SST-2 dataset, cleans, trains TF-IDF + Logistic Regression, and serializes model
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch interactive web app
+streamlit run app.py
+# Or directly:
+python app.py
+```
+Open `http://localhost:8501` to use the interactive dashboard.
+
+---
+
+### 🌐 Option B: Full-Stack (FastAPI + React)
+
+#### 1. Train the ML Models (Optional - pre-trained models already included)
+```bash
 python ml/scripts/train_sentiment.py
+python ml/scripts/train_spam.py
 ```
 
-### 2. Run Backend Tests
+#### 2. Run Backend Tests
 ```bash
 python tests/test_sentiment.py
+python tests/test_spam.py
 ```
 
-### 3. Start the FastAPI Backend
+#### 3. Start the FastAPI Backend
 ```bash
-cd backend
-python -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 - Interactive Swagger UI: `http://localhost:8000/docs`
 - Health check: `http://localhost:8000/health`
 
-### 4. Start the React Frontend
+#### 4. Start the React Frontend
 ```bash
 cd frontend
 npm install
