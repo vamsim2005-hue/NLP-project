@@ -1,0 +1,55 @@
+{
+  "model_name": "Spam Detection",
+  "algorithm": "TF-IDF + Multinomial Naive Bayes",
+  "task_type": "Binary Classification",
+  "labels": [
+    "ham",
+    "spam"
+  ],
+  "dataset_name": "SMS Spam Collection (UCI)",
+  "dataset_size": 5572,
+  "test_size": 1114,
+  "metrics": {
+    "accuracy": 0.9838,
+    "precision": 0.9841,
+    "recall": 0.9838,
+    "f1_score": 0.9834
+  },
+  "confusion_matrix": [
+    [
+      965,
+      0
+    ],
+    [
+      18,
+      131
+    ]
+  ],
+  "classification_report": {
+    "ham": {
+      "precision": 0.9816887080366226,
+      "recall": 1.0,
+      "f1-score": 0.9907597535934292,
+      "support": 965.0
+    },
+    "spam": {
+      "precision": 1.0,
+      "recall": 0.8791946308724832,
+      "f1-score": 0.9357142857142857,
+      "support": 149.0
+    },
+    "accuracy": 0.9838420107719928,
+    "macro avg": {
+      "precision": 0.9908443540183113,
+      "recall": 0.9395973154362416,
+      "f1-score": 0.9632370196538574,
+      "support": 1114.0
+    },
+    "weighted avg": {
+      "precision": 0.9841378844302879,
+      "recall": 0.9838420107719928,
+      "f1-score": 0.9833972987334718,
+      "support": 1114.0
+    }
+  }
+}

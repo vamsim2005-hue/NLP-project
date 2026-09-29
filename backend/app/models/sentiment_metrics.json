@@ -1,0 +1,55 @@
+{
+  "model_name": "Sentiment Analysis",
+  "algorithm": "TF-IDF + Logistic Regression",
+  "task_type": "Binary Classification",
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "dataset_name": "Stanford Sentiment Treebank (SST-2)",
+  "dataset_size": 6920,
+  "test_size": 1384,
+  "metrics": {
+    "accuracy": 0.771,
+    "precision": 0.7716,
+    "recall": 0.771,
+    "f1_score": 0.7703
+  },
+  "confusion_matrix": [
+    [
+      479,
+      183
+    ],
+    [
+      134,
+      588
+    ]
+  ],
+  "classification_report": {
+    "negative": {
+      "precision": 0.7814029363784666,
+      "recall": 0.7235649546827795,
+      "f1-score": 0.7513725490196078,
+      "support": 662.0
+    },
+    "positive": {
+      "precision": 0.7626459143968871,
+      "recall": 0.814404432132964,
+      "f1-score": 0.7876758204956463,
+      "support": 722.0
+    },
+    "accuracy": 0.7709537572254336,
+    "macro avg": {
+      "precision": 0.7720244253876769,
+      "recall": 0.7689846934078717,
+      "f1-score": 0.7695241847576271,
+      "support": 1384.0
+    },
+    "weighted avg": {
+      "precision": 0.7716178425412552,
+      "recall": 0.7709537572254336,
+      "f1-score": 0.7703111053821077,
+      "support": 1384.0
+    }
+  }
+}
